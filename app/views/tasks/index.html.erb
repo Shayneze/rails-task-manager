@@ -1,0 +1,17 @@
+<div class="container">
+  <h1>My Tasks</h1>
+
+  <ul class="list-unstyled">
+    <% @tasks.each do |task| %>
+      <% if task.completed == false %>
+        <li class="my-3"><i class="fa-regular fa-square"></i>
+        <%= link_to task.title, task_path(task) %></li>
+      <% else %>
+        <li class="my-3"><i class="fa-solid fa-square-check"></i>
+        <%= link_to task.title, task_path(task) %></li>
+      <% end %>
+    <% end %>
+  </ul>
+
+  <p><i class="fa-solid fa-plus"></i> <%= link_to "Add a new task", new_task_path%></p>
+</div>
